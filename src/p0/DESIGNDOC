@@ -1,0 +1,56 @@
+			+-------------------------+
+			|      CompSci 143A       |
+			| PROJECT 0: Getting Real |
+			|     DESIGN DOCUMENT     |
+			+-------------------------+
+				   
+---- AUTHOR ----
+
+>> Fill in your name and email address.
+
+Calvin Nguyen <calvinn7@uci.edu>
+
+---- PRELIMINARIES ----
+
+>> If you have any preliminary comments on your submission, or notes for the
+>> TAs, please give them here.
+
+>> Please cite any offline or online sources you consulted while
+>> preparing your submission, other than the Pintos documentation, course
+>> text, lecture notes, and course staff.
+
+			     Booting Pintos
+			     ==============
+
+---- QUESTIONS ---- 
+>> Put the screenshots of Pintos running in src/p0.
+>> A1: Is there any particular issue that you would like us to know?
+        N/A
+
+			     Kernel Monitor
+			     ==============
+
+---- DATA STRUCTURES ----
+
+>> C1: Copy here the declaration of each new or changed `struct' or
+>> `struct' member, global or static variable, `typedef', or
+>> enumeration.  Identify the purpose of each in 25 words or less.
+        1. char input[256]
+            The purpose of this struct is to reserve memory for the user input,
+            storing up to 256 characters.
+        2. char c = input_getc();
+            The purpose of this struct is to retrieve every key of the user
+            input before an inputted newline, registering the command.
+        3. int i = 0;
+            The purpose of this struct is to keep track of the index at which
+            to store the key in memory, ensuring it is under 256 characters.
+---- ALGORITHMS ----
+>> C2: Explain how you read and write to the console for the kernel monitor.
+        I was able to read the user input using the given function 
+        input_getc provided by devices/input.c, where I read every key before
+        a newline was inputted. To write to the console, I used C string 
+        comparison to check conditions for specific commands, and then used
+        printf statements to write to the console, a function that is 
+        provided in Pintos.
+>> C3: Any additional enhancement you implement?
+        N/A
